@@ -10,7 +10,6 @@ import java.time.LocalDateTime;
 @Data
 public class Flight extends BaseEntity {
 
-    private String from;
-    private String to;
-    private LocalDateTime departureDate;
+    private LocalDateTime time;
+    private int flightQuota;
 }
