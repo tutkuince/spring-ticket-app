@@ -5,9 +5,7 @@ import com.finartz.springticketapp.entity.base.BaseEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Set;
 
@@ -24,6 +22,10 @@ public class Airport extends BaseEntity {
     @NotNull
     private String address;
 
-    @OneToMany(mappedBy = "airport", cascade = CascadeType.ALL)
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "airport_company",
+            joinColumns = @JoinColumn(name = "airport_id"),
+            inverseJoinColumns = @JoinColumn(name = "company_id")
+    )
     private Set<Company> companies;
 }

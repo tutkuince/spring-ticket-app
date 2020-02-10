@@ -22,14 +22,8 @@ public class Company extends BaseEntity {
     @NotNull
     private String contactNumber;
 
-    @ManyToOne(cascade = {
-            CascadeType.DETACH,
-            CascadeType.MERGE,
-            CascadeType.PERSIST,
-            CascadeType.REFRESH
-    })
-    @JoinColumn
-    private Airport airport;
+    @ManyToMany(mappedBy = "companies")
+    private Set<Airport> airports;
 
     @OneToMany(mappedBy = "company", cascade = CascadeType.ALL)
     private Set<Flight> flights;
