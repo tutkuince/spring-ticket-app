@@ -2,13 +2,12 @@ package com.finartz.springticketapp.service;
 
 import com.finartz.springticketapp.entity.Ticket;
 
-import java.math.BigDecimal;
-
 public interface TicketService {
 
     Ticket save(Ticket ticket);
     Ticket getByTicketNumber(String ticketNumber);
-    BigDecimal calculateTicketPrice();
-    Ticket buyTicket();
+    Ticket getById(Long id);
+    void calculateTicketPrice(Ticket ticket, long emptyTicketCount);
+    Ticket buyTicket(Ticket ticket);
     Ticket cancelTicket(Ticket ticket);
 }
