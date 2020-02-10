@@ -30,4 +30,10 @@ public class AirportController {
         return ResponseEntity.ok(airports);
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<Airport> getAirportById(@PathVariable Long id) {
+        Airport airport = airportService.getById(id);
+        return ResponseEntity.ok(airport);
+    }
+
 }
