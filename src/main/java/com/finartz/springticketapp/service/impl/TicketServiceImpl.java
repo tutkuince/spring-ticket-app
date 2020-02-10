@@ -6,7 +6,6 @@ import com.finartz.springticketapp.service.TicketService;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
-import java.util.UUID;
 
 @Service
 public class TicketServiceImpl implements TicketService {
@@ -28,14 +27,14 @@ public class TicketServiceImpl implements TicketService {
     }
 
     @Override
-    public String generateTicketNumber() {
-        UUID uuid = UUID.randomUUID();
-        return uuid.toString();
+    public BigDecimal calculateTicketPrice() {
+        // TODO - Calculate ticket price
+        return null;
     }
 
     @Override
-    public BigDecimal calculateTicketPrice() {
-        // TODO - Calculate ticket price
+    public Ticket buyTicket() {
+        // TODO - Buy ticket
         return null;
     }
 

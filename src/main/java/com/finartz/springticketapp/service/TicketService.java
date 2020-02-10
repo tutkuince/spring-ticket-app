@@ -8,7 +8,7 @@ public interface TicketService {
 
     Ticket save(Ticket ticket);
     Ticket getByTicketNumber(String ticketNumber);
-    String generateTicketNumber();
     BigDecimal calculateTicketPrice();
+    Ticket buyTicket();
     Ticket cancelTicket(Ticket ticket);
 }
