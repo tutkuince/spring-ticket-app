@@ -36,4 +36,10 @@ public class AirportController {
         return ResponseEntity.ok(airport);
     }
 
+    @GetMapping("/airport")
+    public ResponseEntity<Airport> getAirportByName(@RequestParam(value = "name") String name) {
+        Airport airport = airportService.getByName(name);
+        return ResponseEntity.ok(airport);
+    }
+
 }
